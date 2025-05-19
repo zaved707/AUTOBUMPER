@@ -15,8 +15,7 @@ client.on('ready', async () => {
 
     const channel = await client.channels.fetch(process.env.BUMP_CHANNEL);
     console.log('BUMP_CHANNEL fetched successfully');
-    const disc = await client.channels.fetch(process.env.DISC_CHANNEL);
-    console.log('DISC_CHANNEL fetched successfully');
+   
 
     function isAllowedTime() {
         // Get current time in Indian timezone
@@ -56,18 +55,7 @@ client.on('ready', async () => {
             console.log(`Bumped at: ${indiaTime}`);
             console.count('Bumped!');
             
-            // Wait for a random time between 10-20 seconds before bumping in disc channel
-            // const randomDelay = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
-            // await new Promise(resolve => setTimeout(resolve, randomDelay));
-            
-            // await disc.sendSlash('1222548162741538938', 'bump');
-            // console.log(`Bumped in disc channel at: ${indiaTime}`);
-
-            // const randomDelay2 = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
-            // await new Promise(resolve => setTimeout(resolve, randomDelay2));
-            
-            // await disc.sendSlash('826100334534328340', 'bump');
-            // console.log(`Bumped in hbbump channel at: ${indiaTime}`);
+           
             
         } catch (error) {
             console.error('Error sending bump command:', error);
